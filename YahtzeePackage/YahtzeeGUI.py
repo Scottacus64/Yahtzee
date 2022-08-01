@@ -527,7 +527,7 @@ class Ui_MainWindow(object):
                     dieObject.isClicked = 0 # reset the isClicked value to 0
                     iconName = dieObject.icon
                     buttonList[i].setIcon(QIcon(iconName)) # update the buttons tha actually display the dice
-                    QApplication.processEvents() # again without this the incons will not update
+                    QApplication.processEvents() # again without this the icons will not update
 
             if dieRolls < 3: # if not pas the end of dice rolls
                 for i in range(10): # we're goining to go through 10 different dice values to simulate a roll
@@ -538,7 +538,7 @@ class Ui_MainWindow(object):
                                 lastTime = 1 # set last time to 1 to set the die button values
                             self.showDie(diceGroup[j], j, lastTime) # call show dice to display the icons
                     time.sleep(.07) # short sleep to slow down the roll 70 ms
-                #dieRolls += 1 # increment dieRolls toward three
+                dieRolls += 1 # increment dieRolls toward three
                 rollsLeft = 3-dieRolls # rolls left will be displayed on the roll button
                 _translate = QtCore.QCoreApplication.translate
                 if dieRolls == 2: # if there is one roll left mahe roll singular
